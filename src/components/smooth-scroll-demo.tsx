@@ -23,6 +23,7 @@ const DemoOne = () => {
                 position="right"
                 items={[
                     { label: 'Ziggers', ariaLabel: 'Ziggers', link: 'https://www.ziggers.in/' },
+                    { label: 'Blog', ariaLabel: 'Blog Index', link: '/blog' },
                     { label: 'LoopVerse', ariaLabel: 'LoopVerse', link: '#' },
                     { label: 'Zachies', ariaLabel: 'Zachies', link: '/zachies' },
                     { label: 'DrinkQ', ariaLabel: 'DrinkQ', link: '/drinkq' }

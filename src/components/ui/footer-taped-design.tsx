@@ -41,6 +41,7 @@ export const FooterTapedDesign = () => {
               <h4 className='uppercase text-sm tracking-widest text-zinc-400 font-bold'>Ecosystem</h4>
               <div className="flex flex-wrap md:flex-col gap-2 text-sm text-zinc-600 items-start">
                 <Link className='hover:text-white transition-colors whitespace-nowrap font-medium' href="https://www.ziggers.in/">Ziggers</Link>
+                <Link className='hover:text-white transition-colors whitespace-nowrap font-medium' href="/blog">Blog</Link>
                 <Link className='hover:text-white transition-colors whitespace-nowrap font-medium' href="/zachies">Zachies</Link>
                 <Link className='hover:text-white transition-colors whitespace-nowrap font-medium' href="/drinkq">DrinkQ</Link>
                 <Link className='hover:text-white transition-colors whitespace-nowrap font-medium' href="https://devfriend.co.in/">DevFried</Link>
