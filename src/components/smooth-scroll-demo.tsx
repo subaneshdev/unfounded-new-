@@ -49,7 +49,7 @@ const DemoOne = () => {
             />
             {/* White Section with Blue Text Reveal */}
             <div className="min-h-[70vh] md:h-screen flex items-center justify-center bg-white text-blue-600 p-6 md:p-8 text-center" ref={revealRef}>
-                <div className="max-w-4xl font-bold text-3xl md:text-5xl lg:text-6xl tracking-tight leading-tight">
+                <h1 className="max-w-4xl font-bold text-3xl md:text-5xl lg:text-6xl tracking-tight leading-tight">
                     <VerticalCutReveal
                         splitBy="words"
                         staggerDuration={0.05}
@@ -63,7 +63,7 @@ const DemoOne = () => {
                     >
                         Hi, we’re a bunch of people who got bored of “planning”… so we started building.
                     </VerticalCutReveal>
-                </div>
+                </h1>
             </div>
             {/* Bouncy Cards Section: In house Ventures */}
             <div className="w-full bg-zinc-950 relative z-10 pt-16 md:pt-24 pb-12 md:pb-16">
@@ -214,7 +214,7 @@ const DemoOne = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent z-10 pointer-events-none"></div>
                         <img 
                             src="/invest.jpg" 
-                            alt="Leonardo DiCaprio holding money - The Wolf of Wall Street" 
+                            alt="Wolf of Wall Street - Inspiration for Unfounded's risk-taking and experimental venture philosophy" 
                             className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
                         />
                         {/* Overlay text / CTA */}

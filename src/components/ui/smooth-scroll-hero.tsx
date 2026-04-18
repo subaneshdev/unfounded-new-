@@ -85,6 +85,8 @@ const SmoothScrollHeroBackground: React.FC<
 			{/* Mobile background */}
 			<motion.div
 				className="absolute inset-0 md:hidden"
+				role="img"
+				aria-label="Unfounded Team Background (Mobile)"
 				style={{
 					backgroundImage: `url(${mobileImage})`,
 					backgroundSize,
@@ -95,6 +97,8 @@ const SmoothScrollHeroBackground: React.FC<
 			{/* Desktop background */}
 			<motion.div
 				className="absolute inset-0 hidden md:block"
+				role="img"
+				aria-label="Unfounded Team Background (Desktop)"
 				style={{
 					backgroundImage: `url(${desktopImage})`,
 					backgroundSize,

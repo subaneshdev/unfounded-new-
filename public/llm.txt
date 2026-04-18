@@ -1,0 +1,23 @@
+# Unfounded
+
+Unfounded is a venture lab and ecosystem built from the coasts of Tamil Nadu, Chennai, shipping innovative Micro SaaS and deep-tech ventures to the global market. We follow an experiment-first philosophy, building and shipping daily to de-risk innovations for ourselves and our partners.
+
+## Core Ventures
+
+- **Ziggers**: Empowering the gig economy through localized labor orchestration.
+- **LoopVerse**: A campus-focused ecosystem connecting student experiences.
+- **Zachies**: A material innovation company focused on sustainable solutions.
+- **DrinkQ**: Smart hydration and returnable packaging infrastructure.
+- **DevFried**: A technical "deep fryer" that turns concept into code at high velocity.
+- **LoopMemory**: An external brain/MCP integration for indexing personal and professional knowledge.
+
+## Mission
+
+Hi, we’re a bunch of people who got bored of “planning”… so we started building.
+
+## Contact
+
+- Website: https://unfounded.in
+- Email: hello@unfounded.in
+- Twitter: @subanesh
+- Location: Chennai, India
