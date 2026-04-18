@@ -17,6 +17,7 @@ const DemoOne = () => {
     const isInView = useInView(revealRef, { once: true, margin: "-100px" });
     const [scrollHeight, setScrollHeight] = React.useState(1500);
     const [isMobile, setIsMobile] = React.useState(false);
+    const [hasMounted, setHasMounted] = React.useState(false);
 
     React.useEffect(() => {
         const handleResize = () => {
@@ -25,6 +26,7 @@ const DemoOne = () => {
             setScrollHeight(mobile ? 800 : 1500);
         };
         handleResize();
+        setHasMounted(true);
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
@@ -56,9 +58,12 @@ const DemoOne = () => {
                 accentColor="#10B981"
             />
 
-            {isMobile ? (
+            {/* Hardened Hero Switching Logic */}
+            <div className={`md:hidden ${hasMounted && isMobile ? 'block' : 'hidden'}`}>
                 <MobileHero />
-            ) : (
+            </div>
+            
+            <div className={`hidden md:block ${hasMounted && !isMobile ? 'block' : 'hidden'}`}>
                 <SmoothScrollHero
                     scrollHeight={scrollHeight}
                     desktopImage="/unfounded-team.jpg"
@@ -66,7 +71,8 @@ const DemoOne = () => {
                     initialClipPercentage={25}
                     finalClipPercentage={75}
                 />
-            )}
+            </div>
+
             {/* White Section with Blue Text Reveal */}
             <div className="min-h-[70vh] md:h-screen flex items-center justify-center bg-white text-blue-600 p-6 md:p-8 text-center" ref={revealRef}>
                 <h1 className="max-w-4xl font-bold text-3xl md:text-5xl lg:text-6xl tracking-tight leading-tight">
