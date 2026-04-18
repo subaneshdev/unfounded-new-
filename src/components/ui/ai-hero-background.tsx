@@ -204,3 +204,4 @@ export function AiHeroBackground() {
 }
 
 export const Component = AiHeroBackground;
+export default AiHeroBackground;
