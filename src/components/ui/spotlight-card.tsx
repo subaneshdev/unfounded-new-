@@ -169,6 +169,26 @@ const GlowCard: React.FC<GlowCardProps> = ({
     }
   `;
 
+  if (isMobile) {
+    return (
+      <div 
+        className={`
+          bg-zinc-900/80 
+          border border-zinc-800 
+          rounded-3xl 
+          p-8 
+          min-h-[400px]
+          h-full
+          ${className}
+        `}
+      >
+        <div className="relative z-10 w-full h-full flex flex-col justify-between">
+          {children}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: beforeAfterStyles }} />
