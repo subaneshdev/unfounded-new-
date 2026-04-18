@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react';
 import { FaLinkedinIn, FaTwitter, FaBehance, FaInstagram } from 'react-icons/fa';
 import { cn } from '@/lib/utils'; // Keeping shadcn structure standard @/lib/utils
