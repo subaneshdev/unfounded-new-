@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Dither from "./Dither";
+import AiHeroBackground from "./ai-hero-background";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
@@ -9,18 +9,8 @@ export const MobileHero = () => {
   return (
     <div className="relative h-screen w-full bg-zinc-950 overflow-hidden flex flex-col items-center justify-center">
       {/* Background Shader */}
-      <div className="absolute inset-0 opacity-60">
-        <Dither
-          waveColor={[0.1, 0.4, 1.0]} // Brighter blue waves
-          disableAnimation={false}
-          enableMouseInteraction={true}
-          mouseRadius={0.5}
-          colorNum={4}
-          pixelSize={3}
-          waveAmplitude={0.4}
-          waveFrequency={2}
-          waveSpeed={0.08}
-        />
+      <div className="absolute inset-0">
+        <AiHeroBackground />
       </div>
 
       {/* Content Overlay */}
