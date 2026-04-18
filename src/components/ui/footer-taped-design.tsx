@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import Link from 'next/link';
-import { FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import { FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const tape = (
   <svg xmlns="http://www.w3.org/2000/svg" width="95" height="80" viewBox="0 0 95 80" fill="none">
@@ -75,22 +75,31 @@ export const FooterTapedDesign = () => {
 
         <div className="flex gap-4 items-center">
           <a
-            href="https://www.linkedin.com/in/subanesh/"
+            href="https://www.linkedin.com/company/unfoundedventurelab"
             target="_blank"
             rel="nofollow noopener"
-            aria-label="Subanesh Linkedin"
+            aria-label="Unfounded LinkedIn Company"
             className="hover:text-white transition-colors"
           >
-            <FaLinkedinIn className="w-5 h-5" />
+            <FaLinkedinIn className="w-5 h-5 text-zinc-400 hover:text-white" />
           </a>
           <a
-            href="https://x.com/subanesh"
+            href="https://www.instagram.com/unfounded.in/"
             target="_blank"
             rel="nofollow noopener"
-            aria-label="Subanesh Twitter"
+            aria-label="Unfounded Instagram"
             className="hover:text-white transition-colors"
           >
-            <FaTwitter className="w-5 h-5" />
+            <FaInstagram className="w-5 h-5 text-zinc-400 hover:text-white" />
+          </a>
+          <a
+            href="https://x.com/CSubanesh"
+            target="_blank"
+            rel="nofollow noopener"
+            aria-label="Unfounded Twitter"
+            className="hover:text-white transition-colors"
+          >
+            <FaTwitter className="w-5 h-5 text-zinc-400 hover:text-white" />
           </a>
         </div>
       </div>

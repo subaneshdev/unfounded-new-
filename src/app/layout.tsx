@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Unfounded | Venture Lab & Micro SaaS Ecosystem",
-  description: "Unfounded is a Chennai-based venture lab shipping innovative Micro SaaS and deep-tech products. We run the experiments so you don’t have to gamble.",
-  keywords: ["Venture Lab", "Micro SaaS", "Chennai Tech", "Unfounded", "Startup Studio", "Indie Hackers", "Tamil Nadu Tech"],
+  title: "Unfounded | Venture Lab in Chennai & Micro SaaS Ecosystem",
+  description: "Unfounded is a premier venture lab in Chennai shipping innovative Micro SaaS and deep-tech products. We run the experiments so you don’t have to gamble.",
+  keywords: ["venture lab", "venture lab in chennai", "Venture Lab", "Micro SaaS", "Chennai Tech", "Unfounded", "Startup Studio", "Indie Hackers", "Tamil Nadu Tech"],
   authors: [{ name: "Subanesh" }],
   openGraph: {
     title: "Unfounded | Venture Lab & Micro SaaS Ecosystem",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Unfounded | Venture Lab & Micro SaaS Ecosystem",
     description: "Built from the coasts of Tamil Nadu, shipping to the world.",
-    creator: "@subanesh",
+    creator: "@CSubanesh",
     images: ["/unfounded-team.jpg"],
   },
   icons: {
@@ -52,10 +52,12 @@ const jsonLd = {
   "url": "https://unfounded.in",
   "logo": "https://unfounded.in/favicon.ico",
   "sameAs": [
-    "https://x.com/subanesh",
-    "https://linkedin.com/in/subanesh"
+    "https://x.com/CSubanesh",
+    "https://linkedin.com/in/subanesh",
+    "https://www.linkedin.com/company/unfoundedventurelab",
+    "https://www.instagram.com/unfounded.in/"
   ],
-  "description": "A venture lab and ecosystem built from Chennai, shipping innovative Micro SaaS and deep-tech ventures.",
+  "description": "A premier venture lab in Chennai and ecosystem built from Tamil Nadu, shipping innovative Micro SaaS and deep-tech ventures.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Chennai",

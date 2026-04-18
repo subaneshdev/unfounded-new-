@@ -28,8 +28,9 @@ const DemoOne = () => {
                     { label: 'DrinkQ', ariaLabel: 'DrinkQ', link: '/drinkq' }
                 ]}
                 socialItems={[
-                    { label: 'Twitter', link: 'https://twitter.com' },
-                    { label: 'LinkedIn', link: 'https://linkedin.com' }
+                    { label: 'X', link: 'https://x.com/CSubanesh' },
+                    { label: 'LinkedIn', link: 'https://www.linkedin.com/company/unfoundedventurelab' },
+                    { label: 'Instagram', link: 'https://www.instagram.com/unfounded.in/' }
                 ]}
                 displaySocials={true}
                 displayItemNumbering={true}
