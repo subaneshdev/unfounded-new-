@@ -48,7 +48,7 @@ const DemoOne = () => {
                 finalClipPercentage={75}
             />
             {/* White Section with Blue Text Reveal */}
-            <div className="h-screen flex items-center justify-center bg-white text-blue-600 p-8 text-center" ref={revealRef}>
+            <div className="min-h-[70vh] md:h-screen flex items-center justify-center bg-white text-blue-600 p-6 md:p-8 text-center" ref={revealRef}>
                 <div className="max-w-4xl font-bold text-3xl md:text-5xl lg:text-6xl tracking-tight leading-tight">
                     <VerticalCutReveal
                         splitBy="words"
@@ -66,12 +66,12 @@ const DemoOne = () => {
                 </div>
             </div>
             {/* Bouncy Cards Section: In house Ventures */}
-            <div className="w-full bg-zinc-950 relative z-10 pt-24 pb-16">
+            <div className="w-full bg-zinc-950 relative z-10 pt-16 md:pt-24 pb-12 md:pb-16">
                 <BouncyCardsFeatures />
             </div>
 
             {/* Micro SaaS Section */}
-            <div className="w-full bg-black relative z-10 py-32 px-4 md:px-8 border-t border-zinc-900 overflow-hidden">
+            <div className="w-full bg-black relative z-10 py-16 md:py-32 px-4 md:px-8 border-t border-zinc-900 overflow-hidden">
                  
                  {/* Radial gradient background to blend nicely */}
                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-900/20 via-black to-black pointer-events-none" />
@@ -152,8 +152,8 @@ const DemoOne = () => {
             </div>
 
             {/* Chennai Sign-off Section (Classic Elegant) */}
-            <div className="w-full bg-white relative z-10 py-32 px-4 md:px-8 border-t border-zinc-200 overflow-hidden">
-                <div className="max-w-5xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-16">
+            <div className="w-full bg-white relative z-10 py-16 md:py-32 px-4 md:px-8 border-t border-zinc-200 overflow-hidden">
+                <div className="max-w-5xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
                     <div className="flex-1 text-left">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-yellow-100 text-yellow-700 font-bold text-sm uppercase tracking-widest mb-6 border border-yellow-300">
                             Made In Namma Chennai 🌍
@@ -185,27 +185,27 @@ const DemoOne = () => {
             </div>
 
             {/* Team Showcase Section */}
-            <div className="w-full bg-zinc-950 relative z-10 pt-8 pb-32 border-t border-zinc-900/50">
+            <div className="w-full bg-zinc-950 relative z-10 pt-8 pb-16 md:pb-32 border-t border-zinc-900/50">
                 <div className="max-w-7xl mx-auto px-4 md:px-8 mb-12 text-center md:text-left flex flex-col items-center md:items-start">
-                    <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight">
+                    <h2 className="text-2xl md:text-5xl font-black text-white mb-4 tracking-tight">
                         We’re not hiring. We’re finding builders.
                     </h2>
-                    <p className="text-xl text-zinc-400 font-medium">
-                        If you take ownership, show up daily, and ship — you belong here.
+                    <p className="text-lg md:text-xl text-zinc-400 font-medium whitespace-pre-wrap md:whitespace-normal">
+                        If you take ownership, ship daily — you belong here.
                     </p>
                 </div>
-                <div className="w-full relative z-10">
+                <div className="w-full relative z-10 px-0 md:px-0">
                     <TeamShowcase />
                 </div>
             </div>
 
             {/* Why Invest In Us Section */}
-            <div className="w-full bg-zinc-950 relative z-10 py-32 px-4 md:px-8 border-t border-zinc-900 overflow-hidden">
+            <div className="w-full bg-zinc-950 relative z-10 py-16 md:py-32 px-4 md:px-8 border-t border-zinc-900 overflow-hidden">
                 <div className="max-w-6xl mx-auto flex flex-col items-center justify-center text-center">
-                    <h2 className="text-sm font-black uppercase tracking-widest text-blue-500 mb-6">
+                    <h2 className="text-xs md:text-sm font-black uppercase tracking-widest text-blue-500 mb-6">
                         Why Invest in Us ?
                     </h2>
-                    <h3 className="text-4xl md:text-6xl font-black text-white mb-16 tracking-tight max-w-4xl leading-tight">
+                    <h3 className="text-3xl md:text-6xl font-black text-white mb-10 md:mb-16 tracking-tight max-w-4xl leading-tight">
                         We run the experiments first, so you don’t have to gamble.
                     </h3>
                     

@@ -71,7 +71,7 @@ const SmoothScrollHeroBackground: React.FC<
 	const backgroundSize = useTransform(
 		scrollY,
 		[0, scrollHeight + 500],
-		["170%", "100%"],
+		["150%", "100%"],
 	);
 
 	return (

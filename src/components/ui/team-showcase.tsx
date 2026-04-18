@@ -72,16 +72,16 @@ export default function TeamShowcase({ members = DEFAULT_MEMBERS }: TeamShowcase
   const col3 = members.filter((_, i) => i % 3 === 2);
 
   return (
-    <div className="flex flex-col md:flex-row items-start gap-8 md:gap-10 lg:gap-14 select-none w-full max-w-5xl mx-auto py-8 px-4 md:px-6 font-sans">
+    <div className="flex flex-col md:flex-row items-start gap-6 md:gap-14 select-none w-full max-w-5xl mx-auto py-4 md:py-8 px-4 md:px-6 font-sans">
       {/* ── Left: photo grid ── */}
-      <div className="flex gap-2 md:gap-3 flex-shrink-0 overflow-x-auto pb-1 md:pb-0">
+      <div className="flex gap-3 md:gap-3 flex-shrink-0 overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory w-full md:w-auto scrollbar-hide">
         {/* Column 1 */}
-        <div className="flex flex-col gap-2 md:gap-3">
+        <div className="flex flex-col gap-2 md:gap-3 snap-start">
           {col1.map((member) => (
             <PhotoCard
               key={member.id}
               member={member}
-              className="w-[110px] h-[120px] sm:w-[130px] sm:h-[140px] md:w-[155px] md:h-[165px]"
+              className="w-[100px] h-[110px] sm:w-[130px] sm:h-[140px] md:w-[155px] md:h-[165px]"
               hoveredId={hoveredId}
               onHover={setHoveredId}
             />
@@ -89,12 +89,12 @@ export default function TeamShowcase({ members = DEFAULT_MEMBERS }: TeamShowcase
         </div>
 
         {/* Column 2 */}
-        <div className="flex flex-col gap-2 md:gap-3 mt-[48px] sm:mt-[56px] md:mt-[68px]">
+        <div className="flex flex-col gap-2 md:gap-3 mt-[40px] sm:mt-[56px] md:mt-[68px] snap-center">
           {col2.map((member) => (
             <PhotoCard
               key={member.id}
               member={member}
-              className="w-[122px] h-[132px] sm:w-[145px] sm:h-[155px] md:w-[172px] md:h-[182px]"
+              className="w-[110px] h-[120px] sm:w-[145px] sm:h-[155px] md:w-[172px] md:h-[182px]"
               hoveredId={hoveredId}
               onHover={setHoveredId}
             />
@@ -102,12 +102,12 @@ export default function TeamShowcase({ members = DEFAULT_MEMBERS }: TeamShowcase
         </div>
 
         {/* Column 3 */}
-        <div className="flex flex-col gap-2 md:gap-3 mt-[22px] sm:mt-[26px] md:mt-[32px]">
+        <div className="flex flex-col gap-2 md:gap-3 mt-[20px] sm:mt-[26px] md:mt-[32px] snap-end">
           {col3.map((member) => (
             <PhotoCard
               key={member.id}
               member={member}
-              className="w-[115px] h-[125px] sm:w-[136px] sm:h-[146px] md:w-[162px] md:h-[172px]"
+              className="w-[105px] h-[115px] sm:w-[136px] sm:h-[146px] md:w-[162px] md:h-[172px]"
               hoveredId={hoveredId}
               onHover={setHoveredId}
             />
@@ -116,7 +116,7 @@ export default function TeamShowcase({ members = DEFAULT_MEMBERS }: TeamShowcase
       </div>
 
       {/* ── Right: member name list*/}
-      <div className="flex flex-col sm:grid sm:grid-cols-2 md:flex md:flex-col gap-4 md:gap-5 pt-0 md:pt-2 flex-1 w-full">
+      <div className="flex flex-col sm:grid sm:grid-cols-2 md:flex md:flex-col gap-3 md:gap-5 pt-4 md:pt-2 flex-1 w-full border-t border-zinc-900 md:border-none">
         {members.map((member) => (
           <MemberRow
             key={member.id}
