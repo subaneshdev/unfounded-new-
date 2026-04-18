@@ -37,8 +37,15 @@ const GlowCard: React.FC<GlowCardProps> = ({
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     const syncPointer = (e: PointerEvent) => {
       const { clientX: x, clientY: y } = e;
       
@@ -51,7 +58,10 @@ const GlowCard: React.FC<GlowCardProps> = ({
     };
 
     document.addEventListener('pointermove', syncPointer);
-    return () => document.removeEventListener('pointermove', syncPointer);
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      document.removeEventListener('pointermove', syncPointer);
+    };
   }, []);
 
   const { base, spread } = glowColorMap[glowColor];
@@ -86,7 +96,7 @@ const GlowCard: React.FC<GlowCardProps> = ({
       backgroundColor: 'var(--backdrop, transparent)',
       backgroundSize: 'calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)))',
       backgroundPosition: '50% 50%',
-      backgroundAttachment: 'fixed',
+      backgroundAttachment: isMobile ? 'scroll' : 'fixed',
       border: 'var(--border-size) solid var(--backup-border)',
       position: 'relative' as const,
       touchAction: 'pan-y' as const,

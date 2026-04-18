@@ -54,6 +54,14 @@ const SmoothScrollHeroBackground: React.FC<
 	finalClipPercentage,
 }) => {
 	const {scrollY} = useScroll();
+	const [isMobile, setIsMobile] = React.useState(false);
+
+	React.useEffect(() => {
+		const checkMobile = () => setIsMobile(window.innerWidth < 768);
+		checkMobile();
+		window.addEventListener('resize', checkMobile);
+		return () => window.removeEventListener('resize', checkMobile);
+	}, []);
 
 	const clipStart = useTransform(
 		scrollY,
@@ -71,7 +79,7 @@ const SmoothScrollHeroBackground: React.FC<
 	const backgroundSize = useTransform(
 		scrollY,
 		[0, scrollHeight + 500],
-		["150%", "100%"],
+		[isMobile ? "130%" : "150%", "100%"],
 	);
 
 	return (

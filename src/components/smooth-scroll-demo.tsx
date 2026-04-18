@@ -14,6 +14,16 @@ import { Terminal, Flame } from "lucide-react";
 const DemoOne = () => {
     const revealRef = useRef(null);
     const isInView = useInView(revealRef, { once: true, margin: "-100px" });
+    const [scrollHeight, setScrollHeight] = React.useState(1500);
+
+    React.useEffect(() => {
+        const handleResize = () => {
+            setScrollHeight(window.innerWidth < 768 ? 800 : 1500);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <div className="relative min-h-screen">
@@ -43,7 +53,7 @@ const DemoOne = () => {
             />
 
             <SmoothScrollHero
-                scrollHeight={1500}
+                scrollHeight={scrollHeight}
                 desktopImage="/unfounded-team.jpg"
                 mobileImage="/unfounded-team.jpg"
                 initialClipPercentage={25}
