@@ -6,7 +6,9 @@ import SmoothScrollHero from "@/components/ui/smooth-scroll-hero";
 import { VerticalCutReveal } from "@/components/ui/vertical-cut-reveal";
 import { BouncyCardsFeatures } from "@/components/ui/bounce-card-features";
 import TeamShowcase from "@/components/ui/team-showcase";
+import StaggeredMenu from "@/components/ui/StaggeredMenu";
 import { GlowCard } from "@/components/ui/spotlight-card";
+import { FooterTapedDesign } from "@/components/ui/footer-taped-design";
 import { Terminal, Flame } from "lucide-react";
 
 const DemoOne = () => {
@@ -15,6 +17,29 @@ const DemoOne = () => {
 
     return (
         <div className="relative min-h-screen">
+            {/* Global Navigation Overlay */}
+            <StaggeredMenu
+                isFixed={true}
+                position="right"
+                items={[
+                    { label: 'Ziggers', ariaLabel: 'Ziggers', link: 'https://www.ziggers.in/' },
+                    { label: 'LoopVerse', ariaLabel: 'LoopVerse', link: '#' },
+                    { label: 'Zachies', ariaLabel: 'Zachies', link: '/zachies' },
+                    { label: 'DrinkQ', ariaLabel: 'DrinkQ', link: '/drinkq' }
+                ]}
+                socialItems={[
+                    { label: 'Twitter', link: 'https://twitter.com' },
+                    { label: 'LinkedIn', link: 'https://linkedin.com' }
+                ]}
+                displaySocials={true}
+                displayItemNumbering={true}
+                menuButtonColor="#ffffff"
+                openMenuButtonColor="#000000"
+                changeMenuColorOnOpen={true}
+                colors={['#10B981', '#059669']}
+                accentColor="#10B981"
+            />
+
             <SmoothScrollHero
                 scrollHeight={1500}
                 desktopImage="/unfounded-team.jpg"
@@ -194,12 +219,17 @@ const DemoOne = () => {
                         />
                         {/* Overlay text / CTA */}
                         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-20 flex flex-col items-center">
-                            <button className="px-8 py-4 bg-blue-600 text-white font-bold text-lg rounded-xl hover:bg-white hover:text-blue-600 hover:scale-105 transition-all shadow-xl border border-transparent hover:border-blue-600">
+                            <a href="mailto:hello@unfounded.in" className="px-8 py-4 bg-blue-600 text-white font-bold text-lg rounded-xl hover:bg-white hover:text-blue-600 hover:scale-105 transition-all shadow-xl border border-transparent hover:border-blue-600">
                                 Partner With Unfounded
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            {/* Custom Taped Footer Section */}
+            <div className="w-full bg-black relative z-10 pt-16">
+                <FooterTapedDesign />
             </div>
         </div>
     );
