@@ -1,8 +1,9 @@
 "use client";
 
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { useInView } from "framer-motion";
 import SmoothScrollHero from "@/components/ui/smooth-scroll-hero";
+import MobileHero from "@/components/ui/mobile-hero";
 import { VerticalCutReveal } from "@/components/ui/vertical-cut-reveal";
 import { BouncyCardsFeatures } from "@/components/ui/bounce-card-features";
 import TeamShowcase from "@/components/ui/team-showcase";
@@ -15,10 +16,13 @@ const DemoOne = () => {
     const revealRef = useRef(null);
     const isInView = useInView(revealRef, { once: true, margin: "-100px" });
     const [scrollHeight, setScrollHeight] = React.useState(1500);
+    const [isMobile, setIsMobile] = React.useState(false);
 
     React.useEffect(() => {
         const handleResize = () => {
-            setScrollHeight(window.innerWidth < 768 ? 800 : 1500);
+            const mobile = window.innerWidth < 768;
+            setIsMobile(mobile);
+            setScrollHeight(mobile ? 800 : 1500);
         };
         handleResize();
         window.addEventListener('resize', handleResize);
@@ -52,13 +56,17 @@ const DemoOne = () => {
                 accentColor="#10B981"
             />
 
-            <SmoothScrollHero
-                scrollHeight={scrollHeight}
-                desktopImage="/unfounded-team.jpg"
-                mobileImage="/unfounded-team.jpg"
-                initialClipPercentage={25}
-                finalClipPercentage={75}
-            />
+            {isMobile ? (
+                <MobileHero />
+            ) : (
+                <SmoothScrollHero
+                    scrollHeight={scrollHeight}
+                    desktopImage="/unfounded-team.jpg"
+                    mobileImage="/unfounded-team.jpg"
+                    initialClipPercentage={25}
+                    finalClipPercentage={75}
+                />
+            )}
             {/* White Section with Blue Text Reveal */}
             <div className="min-h-[70vh] md:h-screen flex items-center justify-center bg-white text-blue-600 p-6 md:p-8 text-center" ref={revealRef}>
                 <h1 className="max-w-4xl font-bold text-3xl md:text-5xl lg:text-6xl tracking-tight leading-tight">
