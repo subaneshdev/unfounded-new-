@@ -13,13 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Unfounded | Venture Lab in Chennai & Micro SaaS Ecosystem",
-  description: "Unfounded is a premier venture lab in Chennai shipping innovative Micro SaaS and deep-tech products. We run the experiments so you don’t have to gamble.",
-  keywords: ["venture lab", "venture lab in chennai", "Venture Lab", "Micro SaaS", "Chennai Tech", "Unfounded", "Startup Studio", "Indie Hackers", "Tamil Nadu Tech"],
+  title: "Unfounded | AI Visibility Platform for AEO & GEO",
+  description: "Unfounded is the premier AI visibility platform specializing in AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization). We ship innovative Micro SaaS and deep-tech products from Chennai to the world.",
+  keywords: [
+    "AEO", "GEO", "Answer Engine Optimization", "Generative Engine Optimization", 
+    "AI Visibility Platform", "venture lab", "venture lab in chennai", 
+    "Micro SaaS", "Chennai Tech", "Unfounded", "Startup Studio"
+  ],
   authors: [{ name: "Subanesh" }],
   openGraph: {
-    title: "Unfounded | Venture Lab & Micro SaaS Ecosystem",
-    description: "Built from the coasts of Tamil Nadu, shipping to the world. We run the experiments first, so you don’t have to gamble.",
+    title: "Unfounded | AI Visibility Platform for AEO & GEO",
+    description: "Built from the coasts of Tamil Nadu, shipping to the world. We run the experiments in AEO and GEO so you don’t have to gamble.",
     url: "https://unfounded.in",
     siteName: "Unfounded",
     images: [
@@ -35,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Unfounded | Venture Lab & Micro SaaS Ecosystem",
-    description: "Built from the coasts of Tamil Nadu, shipping to the world.",
+    title: "Unfounded | AI Visibility Platform for AEO & GEO",
+    description: "Leading the transition to AI-first search. Built from the coasts of Tamil Nadu, shipping to the world.",
     creator: "@CSubanesh",
     images: ["/unfounded-team.jpg"],
   },
@@ -45,26 +49,60 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Unfounded",
-  "url": "https://unfounded.in",
-  "logo": "https://unfounded.in/favicon.ico",
-  "sameAs": [
-    "https://x.com/CSubanesh",
-    "https://linkedin.com/in/subanesh",
-    "https://www.linkedin.com/company/unfoundedventurelab",
-    "https://www.instagram.com/unfounded.in/"
-  ],
-  "description": "A premier venture lab in Chennai and ecosystem built from Tamil Nadu, shipping innovative Micro SaaS and deep-tech ventures.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Chennai",
-    "addressRegion": "Tamil Nadu",
-    "addressCountry": "India"
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://unfounded.in/#organization",
+    "name": "Unfounded",
+    "url": "https://unfounded.in",
+    "logo": "https://unfounded.in/favicon.ico",
+    "sameAs": [
+      "https://x.com/CSubanesh",
+      "https://linkedin.com/in/subanesh",
+      "https://www.linkedin.com/company/unfoundedventurelab",
+      "https://www.instagram.com/unfounded.in/"
+    ],
+    "description": "A premier AI visibility platform and venture lab in Chennai, shipping innovative Micro SaaS and deep-tech ventures optimized for AEO and GEO.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chennai",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "India"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://unfounded.in/#website",
+    "url": "https://unfounded.in",
+    "name": "Unfounded",
+    "publisher": { "@id": "https://unfounded.in/#organization" },
+    "description": "The AI visibility platform for AEO and GEO."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Unfounded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unfounded is an AI visibility platform and venture lab that specializes in AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization), building and shipping Micro SaaS products from Chennai."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is AEO and GEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization) are strategies used to ensure websites and content are correctly indexed and prioritized by AI models like ChatGPT, Claude, and Google SGE."
+        }
+      }
+    ]
   }
-};
+];
 
 export default function RootLayout({
   children,

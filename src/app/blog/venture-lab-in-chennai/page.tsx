@@ -4,8 +4,63 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export default function BlogPostOne() {
+  const blogJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why a Venture Lab in Chennai is the Perfect Breeding Ground for Micro SaaS",
+    "description": "Exploring how Chennai's unique technical ecosystem and infrastructure make it the ideal hub for building and shipping Micro SaaS products.",
+    "author": {
+      "@type": "Person",
+      "name": "Subanesh",
+      "url": "https://x.com/CSubanesh"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Unfounded",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://unfounded.in/favicon.ico"
+      }
+    },
+    "datePublished": "2026-04-18",
+    "image": "https://unfounded.in/unfounded-team.jpg"
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://unfounded.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://unfounded.in/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Venture Lab in Chennai",
+        "item": "https://unfounded.in/blog/venture-lab-in-chennai"
+      }
+    ]
+  };
+
   return (
     <div className="bg-zinc-950 min-h-screen text-white selection:bg-blue-500 selection:text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <StaggeredMenu
           isFixed={true}
           position="right"

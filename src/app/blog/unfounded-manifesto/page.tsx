@@ -4,8 +4,62 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export default function BlogPostTwo() {
+  const blogJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Unfounded Manifesto: Building for the Coastal Shipping Era",
+    "description": "The foundational philosophy of Unfounded venture lab, focusing on shipping experiments, local logic, and the 'Coastal Mindset' from Chennai.",
+    "author": {
+      "@type": "Organization",
+      "name": "Unfounded Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Unfounded",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://unfounded.in/favicon.ico"
+      }
+    },
+    "datePublished": "2026-04-15",
+    "image": "https://unfounded.in/unfounded-team.jpg"
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://unfounded.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://unfounded.in/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Manifesto",
+        "item": "https://unfounded.in/blog/unfounded-manifesto"
+      }
+    ]
+  };
+
   return (
     <div className="bg-zinc-950 min-h-screen text-white selection:bg-blue-500 selection:text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <StaggeredMenu
           isFixed={true}
           position="right"
