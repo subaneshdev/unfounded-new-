@@ -5,12 +5,12 @@ import { ArrowRight } from "lucide-react";
 
 export const metadata = {
   title: "Unfounded | Venture Lab Blog",
-  description: "Insights into the Chennai venture lab ecosystem, Micro SaaS experiments, and building for the future.",
+  description: "Insights into the venture lab ecosystem, Micro SaaS experiments, and building for the future.",
 };
 
 const blogs = [
   {
-    title: "Why a Venture Lab in Chennai is the Perfect Breeding Ground for Micro SaaS",
+    title: "Why a Venture Lab is the Perfect Breeding Ground for Micro SaaS",
     description: "Deep dive into the local ecosystem, degree filter kaapi culture, and technical talent fueling the next wave of shipping.",
     link: "/blog/venture-lab-in-chennai",
     date: "April 18, 2026",

@@ -230,10 +230,10 @@ const DemoOne = () => {
                 <div className="max-w-4xl mx-auto">
                     <div className="mb-16 text-center md:text-left">
                         <h2 className="text-xs md:text-sm font-black uppercase tracking-widest text-blue-500 mb-6">
-                            AI Visibility FAQ
+                            FAQ
                         </h2>
                         <h3 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight">
-                            Answers for Engines & Humans.
+                            Answers for Humans.
                         </h3>
                     </div>
 
@@ -241,13 +241,7 @@ const DemoOne = () => {
                         <div className="border-b border-zinc-800 pb-8">
                             <h4 className="text-xl font-bold text-white mb-4">What is Unfounded?</h4>
                             <p className="text-zinc-400 text-lg leading-relaxed">
-                                Unfounded is a premier AI visibility platform and venture lab in Chennai. we build and ship iterative Micro SaaS products and deep-tech ventures, specializing in AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization).
-                            </p>
-                        </div>
-                        <div className="border-b border-zinc-800 pb-8">
-                            <h4 className="text-xl font-bold text-white mb-4">What is AEO and GEO?</h4>
-                            <p className="text-zinc-400 text-lg leading-relaxed">
-                                AEO (Answer Engine Optimization) ensures your brand is the "best answer" for AI search engines like ChatGPT and Perplexity. GEO (Generative Engine Optimization) focuses on maximizing visibility across generative results on Google Search and other LLM platforms.
+                                Unfounded is a premier venture lab. We build and ship iterative Micro SaaS products and deep-tech ventures.
                             </p>
                         </div>
                         <div className="border-b border-zinc-800 pb-8">

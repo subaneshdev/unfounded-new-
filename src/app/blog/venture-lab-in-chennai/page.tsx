@@ -7,8 +7,8 @@ export default function BlogPostOne() {
   const blogJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Why a Venture Lab in Chennai is the Perfect Breeding Ground for Micro SaaS",
-    "description": "Exploring how Chennai's unique technical ecosystem and infrastructure make it the ideal hub for building and shipping Micro SaaS products.",
+    "headline": "Why a Venture Lab is the Perfect Breeding Ground for Micro SaaS",
+    "description": "Exploring how the unique technical ecosystem and infrastructure make it the ideal hub for building and shipping Micro SaaS products.",
     "author": {
       "@type": "Person",
       "name": "Subanesh",
@@ -45,7 +45,7 @@ export default function BlogPostOne() {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Venture Lab in Chennai",
+        "name": "Venture Lab",
         "item": "https://unfounded.in/blog/venture-lab-in-chennai"
       }
     ]
@@ -96,7 +96,7 @@ export default function BlogPostOne() {
             Ecosystem
           </span>
           <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-8">
-            Why a Venture Lab in Chennai is the Perfect Breeding Ground for Micro SaaS
+            Why a Venture Lab is the Perfect Breeding Ground for Micro SaaS
           </h1>
           <div className="flex items-center gap-4 text-zinc-400 font-medium">
             <div className="w-10 h-10 rounded-full bg-zinc-800 border border-zinc-700" />
@@ -118,7 +118,7 @@ export default function BlogPostOne() {
 
           <h2 className="text-2xl font-bold text-white pt-4">The Logic Paradox</h2>
           <p>
-            Chennai has always been the backend of the backend. We built the banking systems for New York and the CRM flows for London. We understand systems. We understand scale. But for too long, that talent was rented. A **venture lab in Chennai** changes that math by reclaimed the logic.
+            Chennai has always been the backend of the backend. We built the banking systems for New York and the CRM flows for London. We understand systems. We understand scale. But for too long, that talent was rented. A **venture lab** changes that math by reclaimed the logic.
           </p>
 
           <h2 className="text-2xl font-bold text-white pt-4">Why Micro SaaS?</h2>
