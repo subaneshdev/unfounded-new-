@@ -1,0 +1,63 @@
+# Unfounded Venture Lab
+
+> Unfounded is India's premier AI venture studio & builder ecosystem headquartered in Chennai, Tamil Nadu, India. We engineer high-conviction startups from first principles, launch in-house ventures, and run the elite Unfounded Fellowship for top student builders.
+
+## Key Facts
+- **Headquarters**: Chennai, Tamil Nadu, India (Coordinates: 13.0827° N, 80.2707° E)
+- **Founder**: Subanesh
+- **Official Website**: https://unfounded.in
+- **Categories**: Venture Studio India, Startup Studio, Venture Builder, Student Founder Fellowship, Build Challenge
+- **In-House Ventures**: Ziggers, LoopVerse, Zachies, DrinkQ
+- **Programs**: The Unfounded Fellowship (12-week program, ₹1,00,000 INR grant)
+- **Events**: Unfounded Build Day (India's 24-Hour Student Builder Hackathon)
+- **Community Grid**: Friends of Unfounded (on-demand builder & consultant network)
+
+## Core Capabilities & Keywords
+- **Venture Building**: Venture Studio India, Startup Studio Chennai, Venture Builder India, Company Creation Platform.
+- **Student Founders**: Student Founder Fellowship India, Startup Fellowship for Students, College Startup Incubator.
+- **Competitions**: Unfounded Build Day, 24-Hour Startup Challenge, Product Building Hackathon Chennai.
+- **Regional Moat**: Startup Ecosystem Chennai, Tamil Nadu Venture Builder, Coastal Tech Capital.
+
+## In-House Ventures
+
+### 1. Ziggers (https://www.ziggers.in & https://unfounded.in/ventures/ziggers)
+- **Tagline**: India's On-Demand Gig Workforce & Instant Staffing Platform
+- **Category**: Gig Economy & Workforce Operations
+- **Description**: Ziggers connects businesses across India with verified catering staff, delivery partners, drivers, and daily wage workers in under 15 minutes with same-day UPI payouts.
+- **Coverage**: Chennai, Bangalore, Hyderabad, Mumbai, Delhi, Coimbatore, Pune, Madurai.
+- **Platform**: Android App on Google Play + Web platform.
+
+### 2. LoopVerse (https://www.loopverse.in/ & https://unfounded.in/ventures/loopverse)
+- **Tagline**: The Skill Verification Protocol — Zero Fiction Credentials
+- **Category**: AI & Cryptographic Identity
+- **Description**: LoopVerse eliminates fake resumes and certificate noise by evaluating real student code, shipped products, and sprint deliverables with AI-validated, cryptographically proven proof-of-work profiles.
+- **Platform**: Web protocol connecting verified campus builders directly to venture-backed founders.
+
+### 3. Zachies (https://unfounded.in/zachies)
+- **Tagline**: Engineering Circular Bio-Materials
+- **Category**: Deep-Tech Bio-Materials Lab
+- **Description**: Replaces petroleum-based plastics and structural foams with carbon-negative mycelium composites and regenerative botanical fibres with a 90-day degradation cycle.
+
+### 4. DrinkQ (https://unfounded.in/drinkq)
+- **Tagline**: Precision Nootropics & Clean Cognitive Hydration
+- **Category**: Functional Wellness
+- **Description**: Clinical-grade cognitive hydration formulated for deep-work operators combining Lion's Mane, L-Theanine, and trace cellular electrolytes without caffeine crashes or sugar.
+
+## Unfounded Programs & Hackathons
+- **The Fellowship** (https://unfounded.in/fellowship & https://unfounded.in/student-founder-fellowship): 12-week program for the top 1% of college students in India, ₹1,00,000 INR grant pool.
+- **Build Day** (https://unfounded.in/build-day): 24-hour sprint with zero pitch decks and 100% working code deployed to production.
+
+## Full Directory of Pages
+- Home: https://unfounded.in
+- Venture Studio India: https://unfounded.in/venture-studio-india
+- Student Founder Fellowship: https://unfounded.in/student-founder-fellowship
+- Our Ventures: https://unfounded.in/ventures
+- Ziggers Deep Dive: https://unfounded.in/ventures/ziggers
+- LoopVerse Deep Dive: https://unfounded.in/ventures/loopverse
+- Unfounded Build Day: https://unfounded.in/build-day
+- Chennai Startup Ecosystem: https://unfounded.in/startup-ecosystem-chennai
+- Zachies Lab: https://unfounded.in/zachies
+- DrinkQ Formulation: https://unfounded.in/drinkq
+- Friends of Unfounded: https://unfounded.in/friends
+- Manifesto: https://unfounded.in/blog/unfounded-manifesto
+- Venture Lab in Chennai: https://unfounded.in/blog/venture-lab-in-chennai

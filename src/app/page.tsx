@@ -1,9 +1,9 @@
-import { DemoOne } from "@/components/smooth-scroll-demo";
+import Index from "@/components/landing/Index";
 
 export default function Home() {
   return (
     <main>
-      <DemoOne />
+      <Index />
     </main>
   );
 }

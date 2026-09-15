@@ -20,7 +20,7 @@ export const BouncyCardsFeatures = () => {
           <CardTitle>Ziggers</CardTitle>
           <div className="absolute bottom-0 left-4 right-4 top-24 md:top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-[#5C3A21] to-[#8b4513] p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
             <span className="block text-center font-semibold text-orange-50">
-              Empowering the gig economy
+              On-demand gig workforce & instant staffing
             </span>
           </div>
         </BounceCard>
@@ -28,7 +28,7 @@ export const BouncyCardsFeatures = () => {
           <CardTitle>LoopVerse</CardTitle>
           <div className="absolute bottom-0 left-4 right-4 top-24 md:top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-[#0052FF] to-blue-400 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
             <span className="block text-center font-semibold text-blue-50">
-              Connecting campus experiences
+              The Skill Verification Protocol — Zero Fiction Credentials
             </span>
           </div>
         </BounceCard>
