@@ -11,25 +11,27 @@ interface ServiceCardData {
   title: string;
   description: string;
   href?: string;
+  cta?: string;
 }
 
 const SERVICES: ServiceCardData[] = [
   {
-    video:
-      "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4",
-    tag: "The Builder's Program",
-    title: "Unfounded Fellowship",
-    description:
-      "For the top 1% of college students who don't wait for permission to build. 12 weeks of shipping real products, solving real problems, and competing for the ₹1,00,000 Unfounded Grant.",
-    href: "/fellowship",
+    video: "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4",
+    tag: "Unfounded S0 · Track 1",
+    title: "Nights & Weekends",
+    description: "A free online hackathon across Tamil Nadu. Six weeks to build, launch and find your first audience. Registration opening soon.",
+    href: "/nights-and-weekends",
+    cta: "Explore S0",
   },
   {
     video:
       "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4",
-    tag: "Craft",
-    title: "Design & Execution",
+    tag: "The Builder's Program",
+    title: "Unfounded Fellowship",
     description:
-      "From concept to launch, we obsess over every detail to deliver experiences that feel effortless and look extraordinary.",
+      "An offline fellowship in Chennai. Build real products and practice engineering, GTM and sales. Earn your place through demonstrated ability, consistency and impact. No participation fee.",
+    href: "/fellowship",
+    cta: "Explore the program",
   },
 ];
 
@@ -62,7 +64,7 @@ export default function ServicesSection() {
           </span>
         </motion.div>
 
-        {/* Two-card grid */}
+        {/* Two-program grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {SERVICES.map((service, index) => {
             const cardInner = (
@@ -101,7 +103,7 @@ export default function ServicesSection() {
                     </p>
                     {service.href && (
                       <div className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white font-semibold group-hover:translate-x-1 transition-transform">
-                        <span>Explore Fellowship</span>
+                        <span>{service.cta}</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </div>
                     )}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, CheckCircle2, ArrowRight, Loader2, Sparkles } from "lucide-react";
 
@@ -17,7 +17,6 @@ export default function FellowshipApplicationModal({
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [college, setCollege] = useState("");
-  const [yearOfStudy, setYearOfStudy] = useState("3rd Year");
   const [builderType, setBuilderType] = useState("Hybrid Builder");
   const [builtLinks, setBuiltLinks] = useState("");
   const [lakhPitch, setLakhPitch] = useState("");
@@ -25,6 +24,39 @@ export default function FellowshipApplicationModal({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    dialogRef.current?.focus();
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+      if (event.key !== "Tab") return;
+      const controls = Array.from(dialogRef.current?.querySelectorAll<HTMLElement>(
+        'button:not([disabled]), input, textarea, select, a[href], [tabindex="0"]'
+      ) ?? []);
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (!first || !last) return;
+      if (event.shiftKey && (document.activeElement === first || document.activeElement === dialogRef.current)) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && (document.activeElement === last || document.activeElement === dialogRef.current)) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+      previousFocus?.focus();
+    };
+  }, [isOpen, onClose]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,7 +68,7 @@ export default function FellowshipApplicationModal({
     }
 
     if (!builtLinks.trim()) {
-      setErrorMessage("Please provide at least one link to what you have built or shipped.");
+      setErrorMessage("Tell us what you would like to build, or share something you have already shipped.");
       return;
     }
 
@@ -51,7 +83,7 @@ export default function FellowshipApplicationModal({
           email,
           phone,
           college,
-          yearOfStudy,
+          yearOfStudy: "",
           builderType,
           builtLinks,
           lakhPitch,
@@ -100,16 +132,22 @@ export default function FellowshipApplicationModal({
 
         {/* Modal Window */}
         <motion.div
+          ref={dialogRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Nights & Weekends application"
+          tabIndex={-1}
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.3 }}
-          className="relative w-full max-w-2xl bg-[#00172e] border border-white/20 rounded-3xl p-6 sm:p-10 shadow-2xl z-10 text-white my-8 overflow-hidden liquid-glass"
+          className="relative w-full max-w-2xl bg-[#00172e] border border-white/20 rounded-3xl p-6 sm:p-10 shadow-2xl z-10 text-white my-auto max-h-[90svh] overflow-y-auto"
         >
           {/* Close button */}
           <button
             type="button"
             onClick={onClose}
+            aria-label="Close application"
             className="absolute top-6 right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
@@ -121,17 +159,17 @@ export default function FellowshipApplicationModal({
               <div className="mb-8">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs text-white/80 mb-3">
                   <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-                  <span>Season 1 • 20 Fellows</span>
+                  <span>Unfounded S0 • Nights &amp; Weekends</span>
                 </div>
                 <h2
                   className="text-3xl sm:text-4xl font-normal tracking-tight text-white mb-2"
                   style={{ fontFamily: "'Instrument Serif', serif" }}
                 >
-                  Apply to Unfounded Fellowship
+                  Apply for Nights &amp; Weekends
                 </h2>
                 <p className="text-white/60 text-sm leading-relaxed">
-                  For the 1% of college students who don&apos;t wait for permission to build.
-                  Forget the typical internship. You build. You ship. You learn.
+                  For curious students, developers, engineers and aspiring founders.
+                  Tell us what you want to build, learn and put into the world.
                 </p>
               </div>
 
@@ -140,10 +178,10 @@ export default function FellowshipApplicationModal({
                 {/* Full Name & Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs uppercase tracking-wider text-white/60 mb-2 font-medium">
+                    <label htmlFor="full-name" className="block text-xs uppercase tracking-wider text-white/60 mb-2 font-medium">
                       Full Name *
                     </label>
-                    <input
+                    <input id="full-name"
                       type="text"
                       required
                       value={fullName}
@@ -153,10 +191,10 @@ export default function FellowshipApplicationModal({
                     />
                   </div>
                   <div>
-                    <label className="block text-xs uppercase tracking-wider text-white/60 mb-2 font-medium">
+                    <label htmlFor="email" className="block text-xs uppercase tracking-wider text-white/60 mb-2 font-medium">
                       Email Address *
                     </label>
-                    <input
+                    <input id="email"
                       type="email"
                       required
                       value={email}
@@ -170,10 +208,10 @@ export default function FellowshipApplicationModal({
                 {/* Phone & College */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs uppercase tracking-wider text-white/60 mb-2 font-medium">
+                    <label htmlFor="phone" className="block text-xs uppercase tracking-wider text-white/60 mb-2 font-medium">
                       Phone / WhatsApp
                     </label>
-                    <input
+                    <input id="phone"
                       type="tel"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
@@ -182,14 +220,14 @@ export default function FellowshipApplicationModal({
                     />
                   </div>
                   <div>
-                    <label className="block text-xs uppercase tracking-wider text-white/60 mb-2 font-medium">
-                      College / Institution
+                    <label htmlFor="college" className="block text-xs uppercase tracking-wider text-white/60 mb-2 font-medium">
+                      College / Organization (optional)
                     </label>
-                    <input
+                    <input id="college"
                       type="text"
                       value={college}
                       onChange={(e) => setCollege(e.target.value)}
-                      placeholder="IIT Madras / Anna Univ / BITS..."
+                      placeholder="Your college, workplace or independent practice"
                       className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder:text-white/30 text-sm focus:outline-none focus:border-white/50 transition-colors"
                     />
                   </div>
@@ -200,7 +238,7 @@ export default function FellowshipApplicationModal({
                   <label className="block text-xs uppercase tracking-wider text-white/60 mb-2 font-medium">
                     What Kind of Builder Are You?
                   </label>
-                  <div className="grid grid-cols-3 gap-2.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                     {[
                       { type: "Product Builder", desc: "Code, AI, Prototype" },
                       { type: "Distribution Builder", desc: "Attention, Growth, Sales" },
@@ -210,6 +248,7 @@ export default function FellowshipApplicationModal({
                         key={item.type}
                         type="button"
                         onClick={() => setBuilderType(item.type)}
+                        aria-pressed={builderType === item.type}
                         className={`p-3 rounded-xl border text-left transition-all cursor-pointer ${
                           builderType === item.type
                             ? "border-white bg-white/15 text-white"
@@ -225,29 +264,29 @@ export default function FellowshipApplicationModal({
 
                 {/* Proof of Building (Links) */}
                 <div>
-                  <label className="block text-xs uppercase tracking-wider text-white/60 mb-2 font-medium">
-                    Proof of Building (GitHub, Live Project, Portfolio, Twitter) *
+                  <label htmlFor="build-idea" className="block text-xs uppercase tracking-wider text-white/60 mb-2 font-medium">
+                    What would you like to build? *
                   </label>
-                  <textarea
+                  <textarea id="build-idea"
                     required
                     rows={2}
                     value={builtLinks}
                     onChange={(e) => setBuiltLinks(e.target.value)}
-                    placeholder="https://github.com/..., https://myproject.com, or describe what you have built and who used it..."
+                    placeholder="Tell us about your idea. If you have built something already, share a project, GitHub or portfolio link too."
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder:text-white/30 text-sm focus:outline-none focus:border-white/50 transition-colors"
                   />
                 </div>
 
-                {/* The 1 Lakh Question */}
+                {/* Distribution question */}
                 <div>
-                  <label className="block text-xs uppercase tracking-wider text-amber-300/80 mb-2 font-medium flex items-center gap-1.5">
-                    <span>The Final Test</span>
-                    <span className="text-white/40 normal-case">(Optional but heavily weighted)</span>
+                  <label htmlFor="audience" className="block text-xs uppercase tracking-wider text-amber-300/80 mb-2 font-medium flex items-center gap-1.5">
+                    <span>Your first audience</span>
+                    <span className="text-white/40 normal-case">(Optional)</span>
                   </label>
                   <p className="text-xs text-white/60 mb-2 italic">
-                    &ldquo;If we gave you ₹1 lakh and 90 days, what would you build?&rdquo;
+                    &ldquo;Who would use what you build, and how would you reach them?&rdquo;
                   </p>
-                  <textarea
+                  <textarea id="audience"
                     rows={3}
                     value={lakhPitch}
                     onChange={(e) => setLakhPitch(e.target.value)}
@@ -258,7 +297,7 @@ export default function FellowshipApplicationModal({
 
                 {/* Error Banner */}
                 {errorMessage && (
-                  <div className="p-3 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-300 text-xs">
+                  <div role="alert" className="p-3 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-300 text-xs">
                     {errorMessage}
                   </div>
                 )}
@@ -277,13 +316,13 @@ export default function FellowshipApplicationModal({
                       </>
                     ) : (
                       <>
-                        <span>Submit Application to Fellowship</span>
+                        <span>Submit Application</span>
                         <ArrowRight className="w-4 h-4" />
                       </>
                     )}
                   </button>
                   <p className="text-center text-[11px] text-white/40 mt-3">
-                    We don&apos;t care where you study. We care what you can build.
+                    Be curious. Be consistent. Be willing to build.
                   </p>
                 </div>
               </form>
@@ -303,9 +342,8 @@ export default function FellowshipApplicationModal({
               </h3>
 
               <p className="text-white/70 text-sm max-w-md mx-auto leading-relaxed mb-8">
-                Your application has been logged into the Unfounded Fellowship database.
-                Our team reviews submissions on a rolling basis. If your proof of building
-                stands out, you&apos;ll be invited to the **Unfounded Build Day**.
+                Your Nights &amp; Weekends application has been received.
+                The Unfounded team will review what you want to build and contact you about next steps.
               </p>
 
               <div className="p-4 rounded-2xl bg-white/5 border border-white/10 max-w-sm mx-auto mb-8 text-xs text-white/60">

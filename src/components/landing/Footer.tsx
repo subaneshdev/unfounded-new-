@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaTwitter } from "react-icons/fa";
 import UnfoundedLogo from "@/components/ui/UnfoundedLogo";
 
 export default function Footer() {
@@ -18,7 +18,8 @@ export default function Footer() {
         </div>
 
         {/* Navigation links */}
-        <nav className="flex flex-wrap items-center justify-center gap-8 text-sm text-white/70">
+        <nav className="flex flex-wrap items-center justify-center gap-6 text-sm text-white/70">
+          <Link href="/nights-and-weekends" className="hover:text-white transition-colors">Nights &amp; Weekends</Link>
           <Link
             href="/fellowship"
             className="hover:text-white transition-colors flex items-center gap-1.5"
@@ -33,12 +34,12 @@ export default function Footer() {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
             Friends of Unfounded
           </Link>
-          <a href="#services" className="hover:text-white transition-colors">
+          <Link href="/ventures" className="hover:text-white transition-colors">
             Ventures
-          </a>
-          <a href="#about" className="hover:text-white transition-colors">
+          </Link>
+          <Link href="/#about" className="hover:text-white transition-colors">
             About
-          </a>
+          </Link>
         </nav>
 
         {/* Social & copyright */}

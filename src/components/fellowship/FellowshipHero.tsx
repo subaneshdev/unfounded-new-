@@ -1,75 +1,66 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import UnfoundedLogo from "@/components/ui/UnfoundedLogo";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import SiteHeader from "@/components/ui/SiteHeader";
 
 interface FellowshipHeroProps {
-  onOpenApply: () => void;
+  overview?: boolean;
 }
 
-export default function FellowshipHero({ onOpenApply }: FellowshipHeroProps) {
-  const scrollToProgram = () => {
-    const el = document.getElementById("fellowship-program");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+export default function FellowshipHero({ overview = false }: FellowshipHeroProps) {
   return (
-    <section className="relative min-h-screen flex flex-col justify-between bg-black text-white overflow-hidden select-none">
-      {/* 1. Fullscreen Video Background */}
+    <section className="relative min-h-[90svh] flex flex-col bg-[#071322] text-white overflow-hidden">
       <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
-        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4"
+        autoPlay loop muted playsInline preload="metadata" aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none motion-reduce:hidden"
+        src={overview
+          ? "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4"
+          : "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4"}
+        poster="/unfounded-team.jpg"
       />
-
-      {/* 2. Minimalist Header: Logo Only */}
-      <header className="relative z-10 w-full px-6 sm:px-10 py-8 max-w-7xl mx-auto flex items-center justify-between">
-        <UnfoundedLogo href="/" subtext="Fellowship" />
-      </header>
-
-      {/* 3. Hero Centered Content: ONLY Heading + Two Buttons */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-4xl mx-auto w-full my-auto -translate-y-12 sm:-translate-y-20 md:-translate-y-24">
-        {/* Main Heading */}
-        <h1
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.08] sm:leading-[1.05] tracking-tight max-w-3xl font-normal text-white animate-fade-rise"
-          style={{ fontFamily: "'Instrument Serif', serif" }}
-        >
-          Top 1% of college students{" "}
-          <span className="italic block sm:inline text-white/85">
-            who don&apos;t wait for permission to build.
-          </span>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/35 to-black/80" />
+      <SiteHeader currentPath={overview ? "/nights-and-weekends" : "/fellowship"} showNightsAndWeekends={overview} />
+      <div className="relative flex-1 flex flex-col items-center justify-center text-center px-6 py-20 max-w-5xl mx-auto w-full">
+        <p className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-white/80 mb-8 flex items-center gap-3">
+          <span className="h-1.5 w-1.5 rounded-full bg-blue-300" />
+          {overview ? "Unfounded S0 · Track 1 · Six weeks" : "The Unfounded Fellowship Track"}
+        </p>
+        <h1 className="font-instrument text-6xl sm:text-8xl lg:text-[112px] leading-[0.95] tracking-tight font-normal">
+          <span className="block">Unfounded</span>
+          <span className="italic block text-white/90">{overview ? "Nights & Weekends." : "Fellowship."}</span>
         </h1>
-
-        {/* The Two Buttons */}
-        <div className="animate-fade-rise-delay mt-8 sm:mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto justify-center">
-          <button
-            type="button"
-            onClick={onOpenApply}
-            className="w-full sm:w-auto bg-white text-black hover:bg-white/90 rounded-full px-12 py-5 text-base font-bold tracking-wider hover:scale-[1.03] transition-all cursor-pointer shadow-2xl flex items-center justify-center gap-3"
-          >
-            <span>APPLY FOR FELLOWSHIP</span>
-            <ArrowRight className="w-5 h-5" />
-          </button>
-
-          <button
-            type="button"
-            onClick={scrollToProgram}
-            className="w-full sm:w-auto liquid-glass rounded-full px-10 py-5 text-base text-white hover:scale-[1.03] transition-transform cursor-pointer font-medium tracking-wide shadow-2xl border border-white/25"
-          >
-            Explore Program ↓
-          </button>
+        <p className="mt-8 text-lg sm:text-2xl text-white/85 font-light">
+          {overview ? "Learn. Build. Ship. Earn your place." : "Learn. Build. Sell. Scale."}
+        </p>
+        <p className="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-white/70">
+          {overview
+            ? "An idea you can’t leave alone. A few hours after everything else. Six weeks to make something real."
+            : "Advanced skills. Real startup problems. A chance to earn your place in the Unfounded Fellowship Track."}
+        </p>
+        <p className="mt-5 text-xs sm:text-sm uppercase tracking-widest text-blue-200">
+          {overview ? "Online · Across Tamil Nadu · No participation fee" : "Offline · Chennai · No participation fee"}
+        </p>
+        <div className="mt-9 flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-3 w-full sm:w-auto">
+          <span className="w-full sm:w-auto rounded-full bg-white/15 text-white/80 px-8 py-4 text-sm font-semibold text-center">Registration opening soon</span>
+          {overview ? (
+            <Link href="/fellowship" className="w-full sm:w-auto rounded-full bg-white text-black px-8 py-4 text-sm font-semibold flex justify-center items-center gap-3 hover:bg-white/90 transition-colors">
+              Explore the builder program <ArrowUpRight className="size-4" />
+            </Link>
+          ) : (
+            <a href="#fellowship-track" className="w-full sm:w-auto rounded-full bg-white text-black px-8 py-4 text-sm font-semibold flex justify-center items-center gap-3 hover:bg-white/90 transition-colors">
+              Explore the fellowship <ArrowUpRight className="size-4" />
+            </a>
+          )}
+          <a href={overview ? "#six-weeks" : "#fellowship-program"} className="w-full sm:w-auto liquid-glass rounded-full px-8 py-4 text-sm font-medium flex justify-center items-center gap-3 hover:bg-white/10 transition-colors">
+            {overview ? "How it works" : "Explore the curriculum"} <ArrowDown className="size-4" />
+          </a>
         </div>
       </div>
-
-      {/* Subtle bottom spacer for balanced vertical centering */}
-      <div className="relative z-10 pb-8" />
+      <div className="relative max-w-6xl mx-auto w-full px-6 pb-8 flex flex-wrap justify-between gap-3 text-[10px] uppercase tracking-[0.2em] text-white/60">
+        <span>{overview ? "Learn during the week. Build on weekends." : "Demonstrated ability. Consistency. Impact."}</span>
+        <span>Ship real code. Show your work.</span>
+      </div>
     </section>
   );
 }

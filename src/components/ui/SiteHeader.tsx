@@ -8,9 +8,10 @@ import UnfoundedLogo from "@/components/ui/UnfoundedLogo";
 interface SiteHeaderProps {
   currentPath?: string;
   className?: string;
+  showNightsAndWeekends?: boolean;
 }
 
-export default function SiteHeader({ currentPath = "/", className = "" }: SiteHeaderProps) {
+export default function SiteHeader({ currentPath = "/", className = "", showNightsAndWeekends = true }: SiteHeaderProps) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   return (
@@ -21,7 +22,7 @@ export default function SiteHeader({ currentPath = "/", className = "" }: SiteHe
           <UnfoundedLogo href="/" />
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-7 ml-8">
+          <div className="hidden xl:flex items-center gap-7 ml-8">
             <Link
               href="/ventures"
               className={`text-sm font-medium transition-colors ${
@@ -71,12 +72,12 @@ export default function SiteHeader({ currentPath = "/", className = "" }: SiteHe
 
         {/* Right CTA Actions */}
         <div className="flex items-center gap-2.5 sm:gap-3">
-          <Link
-            href="/fellowship"
+          {showNightsAndWeekends && <Link
+            href="/nights-and-weekends"
             className="liquid-glass rounded-full px-4 py-2 text-xs font-medium text-white/90 hover:text-white hover:bg-white/10 transition-all border border-white/20 hidden md:inline-flex items-center gap-1.5"
           >
-            <span>The 1% Fellowship</span>
-          </Link>
+            <span>Nights &amp; Weekends</span>
+          </Link>}
           <Link
             href="/friends"
             className="bg-white text-black hover:bg-white/90 rounded-full px-4 sm:px-5 py-2 text-xs font-bold transition-all hover:scale-105 shadow-md flex items-center gap-1.5"
@@ -89,8 +90,10 @@ export default function SiteHeader({ currentPath = "/", className = "" }: SiteHe
           <button
             type="button"
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="p-2 text-white/80 hover:text-white rounded-full lg:hidden liquid-glass border border-white/15"
+            className="p-2 text-white/80 hover:text-white rounded-full xl:hidden liquid-glass border border-white/15"
             aria-label="Toggle Navigation"
+            aria-expanded={isMobileOpen}
+            aria-controls="site-mobile-navigation"
           >
             {isMobileOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
@@ -99,7 +102,15 @@ export default function SiteHeader({ currentPath = "/", className = "" }: SiteHe
 
       {/* Mobile Drawer */}
       {isMobileOpen && (
-        <div className="lg:hidden mt-3 max-w-6xl mx-auto liquid-glass rounded-3xl p-5 border border-white/15 shadow-2xl backdrop-blur-2xl flex flex-col gap-4 animate-fade-rise">
+        <div id="site-mobile-navigation" className="xl:hidden mt-3 max-w-6xl mx-auto liquid-glass rounded-3xl p-5 border border-white/15 shadow-2xl backdrop-blur-2xl flex flex-col gap-4 animate-fade-rise">
+          {showNightsAndWeekends && <Link
+            href="/nights-and-weekends"
+            onClick={() => setIsMobileOpen(false)}
+            className="text-sm font-medium text-white/90 hover:text-white py-1 flex items-center justify-between"
+          >
+            <span>Nights &amp; Weekends · S0</span>
+            <ArrowRight className="w-4 h-4 text-white/50" />
+          </Link>}
           <Link
             href="/ventures"
             onClick={() => setIsMobileOpen(false)}
