@@ -9,8 +9,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/blog/unfounded-manifesto",
-        destination: "/blog",
+        source: "/blog/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/blog",
+        destination: "/",
         permanent: true,
       },
     ];

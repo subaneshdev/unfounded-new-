@@ -16,7 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/friends', priority: 0.85, changeFrequency: 'weekly' as const },
     { route: '/zachies', priority: 0.8, changeFrequency: 'monthly' as const },
     { route: '/drinkq', priority: 0.8, changeFrequency: 'monthly' as const },
-    { route: '/blog', priority: 0.8, changeFrequency: 'weekly' as const },
   ].map((item) => ({
     url: `${baseUrl}${item.route}`,
     lastModified: new Date(),
@@ -24,14 +23,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: item.priority,
   }))
 
-  const blogPosts = [
-    '/blog/venture-lab-in-chennai',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.75,
-  }))
-
-  return [...coreRoutes, ...blogPosts]
+  return coreRoutes
 }

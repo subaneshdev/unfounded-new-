@@ -103,8 +103,8 @@ export default function HeroSection() {
       <SiteHeader currentPath="/" />
 
       {/* Hero content */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12 text-center -translate-y-[8%] sm:-translate-y-[12%] max-w-4xl mx-auto">
-        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-white tracking-tight font-serif font-instrument mb-6 leading-[1.02]">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-8 sm:py-12 text-center translate-y-0 sm:-translate-y-[4%] md:-translate-y-[8%] my-auto max-w-4xl mx-auto">
+        <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-white tracking-tight font-serif font-instrument mb-6 leading-[1.02]">
           We build what <span className="italic">doesn’t exist.</span>
         </h1>
 
@@ -124,7 +124,7 @@ export default function HeroSection() {
       </div>
 
       {/* Social icons footer */}
-      <div className="relative z-10 flex justify-center gap-4 pb-12">
+      <div className="relative z-10 flex justify-center gap-4 pb-6 sm:pb-12">
         <a
           href={SOCIAL_LINKS.instagram}
           target="_blank"

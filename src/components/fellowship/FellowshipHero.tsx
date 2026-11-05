@@ -55,12 +55,12 @@ export default function FellowshipHero({ overview = false }: FellowshipHeroProps
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/35 to-black/80" />
       <SiteHeader currentPath={overview ? "/nights-and-weekends" : "/fellowship"} showNightsAndWeekends={overview} />
-      <div className="relative flex-1 flex flex-col items-center justify-center text-center px-6 py-20 max-w-5xl mx-auto w-full">
+      <div className="relative flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 py-10 sm:py-20 max-w-5xl mx-auto w-full">
         <p className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-white/80 mb-8 flex items-center gap-3">
           <span className="h-1.5 w-1.5 rounded-full bg-blue-300" />
           {overview ? "Unfounded S0 · Track 1 · Six weeks" : "The Unfounded Fellowship Track"}
         </p>
-        <h1 className="font-instrument text-6xl sm:text-8xl lg:text-[112px] leading-[0.95] tracking-tight font-normal">
+        <h1 className="font-instrument text-4xl sm:text-7xl md:text-8xl lg:text-[112px] leading-[0.98] break-words tracking-tight font-normal">
           <span className="block">Unfounded</span>
           <span className="italic block text-white/90">{overview ? "Nights & Weekends." : "Fellowship."}</span>
         </h1>

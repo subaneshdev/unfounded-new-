@@ -14,7 +14,7 @@ export default function FeaturedVideoSection() {
           initial={{ opacity: 0, y: 60 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
           transition={{ duration: 0.9 }}
-          className="relative rounded-3xl overflow-hidden aspect-video w-full bg-zinc-950"
+          className="relative rounded-3xl overflow-hidden min-h-[460px] sm:min-h-[400px] md:min-h-0 md:aspect-video w-full bg-zinc-950"
         >
           {/* Video */}
           <video
