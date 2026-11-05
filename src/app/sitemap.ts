@@ -25,7 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const blogPosts = [
-    '/blog/unfounded-manifesto',
     '/blog/venture-lab-in-chennai',
   ].map((route) => ({
     url: `${baseUrl}${route}`,

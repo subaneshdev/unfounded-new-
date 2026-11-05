@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/blog/unfounded-manifesto",
+        destination: "/blog",
+        permanent: true,
+      },
     ];
   },
 };

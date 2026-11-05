@@ -46,12 +46,6 @@ export default function SiteHeader({ currentPath = "/", className = "", showNigh
               <span>Friends</span>
             </Link>
             <Link
-              href="/blog/unfounded-manifesto"
-              className="text-white/70 hover:text-white text-sm font-medium transition-colors"
-            >
-              Manifesto
-            </Link>
-            <Link
               href="/#about"
               className="text-white/70 hover:text-white text-sm font-medium transition-colors"
             >
@@ -121,14 +115,6 @@ export default function SiteHeader({ currentPath = "/", className = "", showNigh
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
               Friends of Unfounded
             </span>
-            <ArrowRight className="w-4 h-4 text-white/50" />
-          </Link>
-          <Link
-            href="/blog/unfounded-manifesto"
-            onClick={() => setIsMobileOpen(false)}
-            className="text-sm font-medium text-white/90 hover:text-white py-1 flex items-center justify-between"
-          >
-            <span>Manifesto</span>
             <ArrowRight className="w-4 h-4 text-white/50" />
           </Link>
           <Link

@@ -15,13 +15,6 @@ const blogs = [
     link: "/blog/venture-lab-in-chennai",
     date: "April 18, 2026",
     tag: "Ecosystem"
-  },
-  {
-    title: "The Unfounded Manifesto: Building for the Coastal Shipping Era",
-    description: "Explaining our 'Experiment First' philosophy and why we stopped planning and started building.",
-    link: "/blog/unfounded-manifesto",
-    date: "April 15, 2026",
-    tag: "Philosophy"
   }
 ];
 
