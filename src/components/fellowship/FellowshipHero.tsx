@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import SiteHeader from "@/components/ui/SiteHeader";
@@ -9,15 +10,48 @@ interface FellowshipHeroProps {
 }
 
 export default function FellowshipHero({ overview = false }: FellowshipHeroProps) {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleCanPlay = () => {
+      setIsVideoLoaded(true);
+    };
+
+    video.addEventListener("canplay", handleCanPlay);
+    video.addEventListener("playing", handleCanPlay);
+
+    if (video.readyState >= 3) {
+      setIsVideoLoaded(true);
+    }
+
+    return () => {
+      video.removeEventListener("canplay", handleCanPlay);
+      video.removeEventListener("playing", handleCanPlay);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-[90svh] flex flex-col bg-[#071322] text-white overflow-hidden">
       <video
-        autoPlay loop muted playsInline preload="metadata" aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none motion-reduce:hidden"
+        ref={videoRef}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+        onCanPlay={() => setIsVideoLoaded(true)}
+        onPlaying={() => setIsVideoLoaded(true)}
+        className={`absolute inset-0 w-full h-full object-cover pointer-events-none motion-reduce:hidden transition-opacity duration-700 ease-out ${
+          isVideoLoaded ? "opacity-100" : "opacity-0"
+        }`}
         src={overview
           ? "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4"
           : "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4"}
-        poster="/unfounded-team.jpg"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/35 to-black/80" />
       <SiteHeader currentPath={overview ? "/nights-and-weekends" : "/fellowship"} showNightsAndWeekends={overview} />
