@@ -9,12 +9,22 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/blog",
+        destination: "/",
+        permanent: true,
+      },
+      {
         source: "/blog/:path*",
         destination: "/",
         permanent: true,
       },
       {
-        source: "/blog",
+        source: "/manifesto",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/unfounded-manifesto",
         destination: "/",
         permanent: true,
       },

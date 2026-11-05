@@ -209,7 +209,7 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "@id": "https://unfounded.in/ventures#list",
+    "@id": "https://unfounded.in/#ventures-list",
     "name": "Unfounded In-House Ventures",
     "description": "Proprietary ventures built, incubated, and scaled by Unfounded Venture Lab.",
     "itemListElement": [
