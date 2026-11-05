@@ -7,7 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '', priority: 1.0, changeFrequency: 'daily' as const },
     { route: '/venture-studio-india', priority: 0.98, changeFrequency: 'weekly' as const },
     { route: '/student-founder-fellowship', priority: 0.98, changeFrequency: 'weekly' as const },
-    { route: '/ventures', priority: 0.95, changeFrequency: 'weekly' as const },
     { route: '/nights-and-weekends', priority: 0.95, changeFrequency: 'weekly' as const },
     { route: '/fellowship', priority: 0.95, changeFrequency: 'weekly' as const },
     { route: '/build-day', priority: 0.90, changeFrequency: 'weekly' as const },

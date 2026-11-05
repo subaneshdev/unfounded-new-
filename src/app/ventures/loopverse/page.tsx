@@ -116,10 +116,10 @@ export default function LoopVerseVenturePage() {
             <ArrowUpRight className="w-4 h-4" />
           </a>
           <Link
-            href="/ventures"
+            href="/"
             className="w-full sm:w-auto px-8 py-4 rounded-full liquid-glass text-white font-semibold text-sm uppercase tracking-wider hover:bg-white/10 transition-all border border-white/20 flex items-center justify-center gap-2"
           >
-            <span>← Back to All Ventures</span>
+            <span>← Back to Home</span>
           </Link>
         </div>
 

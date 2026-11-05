@@ -35,9 +35,6 @@ export default function Footer() {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
             Friends of Unfounded
           </Link>
-          <Link href="/ventures" className="hover:text-white transition-colors">
-            Ventures
-          </Link>
           <Link href="/#about" className="hover:text-white transition-colors">
             About
           </Link>

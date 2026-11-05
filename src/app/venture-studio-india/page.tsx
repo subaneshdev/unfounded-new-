@@ -147,7 +147,7 @@ export default function VentureStudioIndiaPage() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            href="/ventures"
+            href="/"
             className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-black font-semibold text-sm uppercase tracking-wider hover:bg-white/90 hover:scale-105 transition-all shadow-xl flex items-center justify-center gap-2"
           >
             <span>Explore In-House Ventures</span>

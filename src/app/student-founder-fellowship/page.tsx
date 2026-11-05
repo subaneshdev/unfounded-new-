@@ -153,7 +153,7 @@ export default function StudentFounderFellowshipPage() {
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
-            href="/ventures"
+            href="/"
             className="w-full sm:w-auto px-8 py-4 rounded-full liquid-glass text-white font-semibold text-sm uppercase tracking-wider hover:bg-white/10 transition-all border border-white/20 flex items-center justify-center gap-2"
           >
             <span>Explore Ventures You’ll Build On</span>

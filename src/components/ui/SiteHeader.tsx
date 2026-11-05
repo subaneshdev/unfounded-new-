@@ -24,16 +24,6 @@ export default function SiteHeader({ currentPath = "/", className = "", showNigh
           {/* Desktop Navigation Links */}
           <div className="hidden xl:flex items-center gap-7 ml-8">
             <Link
-              href="/ventures"
-              className={`text-sm font-medium transition-colors ${
-                currentPath === "/ventures"
-                  ? "text-white font-semibold"
-                  : "text-white/70 hover:text-white"
-              }`}
-            >
-              Our Ventures
-            </Link>
-            <Link
               href="/fellowship"
               className={`text-sm font-medium transition-colors flex items-center gap-1.5 ${
                 currentPath === "/fellowship"
@@ -111,14 +101,6 @@ export default function SiteHeader({ currentPath = "/", className = "", showNigh
             <span>Nights &amp; Weekends · S0</span>
             <ArrowRight className="w-4 h-4 text-white/50" />
           </Link>}
-          <Link
-            href="/ventures"
-            onClick={() => setIsMobileOpen(false)}
-            className="text-sm font-medium text-white/90 hover:text-white py-1 flex items-center justify-between"
-          >
-            <span>Our Ventures</span>
-            <ArrowRight className="w-4 h-4 text-white/50" />
-          </Link>
           <Link
             href="/fellowship"
             onClick={() => setIsMobileOpen(false)}
