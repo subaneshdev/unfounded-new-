@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 import Link from 'next/link';
 import { FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { SOCIAL_LINKS, PHONE } from "@/lib/social";
 
 const tape = (
   <svg xmlns="http://www.w3.org/2000/svg" width="95" height="80" viewBox="0 0 95 80" fill="none">
@@ -56,7 +57,7 @@ export const FooterTapedDesign = () => {
                 <Link className='pointer-events-none opacity-50 whitespace-nowrap font-medium' href="#">Join the Team <span className='inline-flex ml-1 py-0.5 px-3 bg-zinc-900 border border-zinc-800 text-xs rounded-xl rotate-3'>soon</span></Link>
                 <a className='hover:text-white transition-colors whitespace-nowrap font-medium' href="mailto:hello@unfounded.in">Partner with Us</a>
                 <a className='hover:text-white transition-colors whitespace-nowrap font-medium' href="mailto:hello@unfounded.in">hello@unfounded.in</a>
-                <a className='hover:text-white transition-colors whitespace-nowrap font-medium' href="tel:+929344978002">+92 93449 78002</a>
+                <a className='hover:text-white transition-colors whitespace-nowrap font-medium' href={PHONE.href}>{PHONE.display}</a>
               </div>
             </div>
 
@@ -77,28 +78,28 @@ export const FooterTapedDesign = () => {
 
         <div className="flex gap-4 items-center">
           <a
-            href="https://www.linkedin.com/company/unfoundedventurelab"
+            href={SOCIAL_LINKS.linkedin}
             target="_blank"
-            rel="nofollow noopener"
-            aria-label="Unfounded LinkedIn Company"
+            rel="noopener noreferrer"
+            aria-label="Unfounded on LinkedIn"
             className="hover:text-white transition-colors"
           >
             <FaLinkedinIn className="w-5 h-5 text-zinc-400 hover:text-white" />
           </a>
           <a
-            href="https://www.instagram.com/unfounded.in/"
+            href={SOCIAL_LINKS.instagram}
             target="_blank"
-            rel="nofollow noopener"
-            aria-label="Unfounded Instagram"
+            rel="noopener noreferrer"
+            aria-label="Unfounded on Instagram"
             className="hover:text-white transition-colors"
           >
             <FaInstagram className="w-5 h-5 text-zinc-400 hover:text-white" />
           </a>
           <a
-            href="https://x.com/CSubanesh"
+            href={SOCIAL_LINKS.twitter}
             target="_blank"
-            rel="nofollow noopener"
-            aria-label="Unfounded Twitter"
+            rel="noopener noreferrer"
+            aria-label="Unfounded on X (Twitter)"
             className="hover:text-white transition-colors"
           >
             <FaTwitter className="w-5 h-5 text-zinc-400 hover:text-white" />

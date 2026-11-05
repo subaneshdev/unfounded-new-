@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Globe, ArrowRight } from "lucide-react";
 import { FaInstagram, FaTwitter } from "react-icons/fa";
+import { SOCIAL_LINKS } from "@/lib/social";
 import SiteHeader from "@/components/ui/SiteHeader";
 
 export default function HeroSection() {
@@ -131,19 +132,19 @@ export default function HeroSection() {
       {/* Social icons footer */}
       <div className="relative z-10 flex justify-center gap-4 pb-12">
         <a
-          href="https://instagram.com"
+          href={SOCIAL_LINKS.instagram}
           target="_blank"
           rel="noreferrer"
-          aria-label="Instagram"
+          aria-label="Unfounded on Instagram"
           className="liquid-glass rounded-full p-4 text-white/80 hover:text-white hover:bg-white/5 transition-all flex items-center justify-center cursor-pointer"
         >
           <FaInstagram className="w-5 h-5" />
         </a>
         <a
-          href="https://twitter.com"
+          href={SOCIAL_LINKS.twitter}
           target="_blank"
           rel="noreferrer"
-          aria-label="Twitter"
+          aria-label="Unfounded on X (Twitter)"
           className="liquid-glass rounded-full p-4 text-white/80 hover:text-white hover:bg-white/5 transition-all flex items-center justify-center cursor-pointer"
         >
           <FaTwitter className="w-5 h-5" />

@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { FaInstagram, FaTwitter } from "react-icons/fa";
 import UnfoundedLogo from "@/components/ui/UnfoundedLogo";
+import { SOCIAL_LINKS } from "@/lib/social";
 
 export default function Footer() {
   return (
@@ -46,17 +47,19 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-end gap-3">
           <div className="flex items-center gap-4 text-white/60">
             <a
-              href="https://twitter.com"
+              href={SOCIAL_LINKS.twitter}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Unfounded on X (Twitter)"
               className="hover:text-white transition-colors p-2 liquid-glass rounded-full"
             >
               <FaTwitter className="w-4 h-4" />
             </a>
             <a
-              href="https://instagram.com"
+              href={SOCIAL_LINKS.instagram}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Unfounded on Instagram"
               className="hover:text-white transition-colors p-2 liquid-glass rounded-full"
             >
               <FaInstagram className="w-4 h-4" />

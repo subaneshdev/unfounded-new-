@@ -149,7 +149,7 @@ export default function ZachiesPage() {
       <section className="py-32 px-6 border-t border-zinc-900 relative overflow-hidden bg-black">
         <div className="max-w-4xl mx-auto text-center relative z-10">
             <h2 className="text-4xl md:text-6xl font-black mb-8 text-white">Redefining the Material Economy.</h2>
-            <Link href="/" className="inline-block px-8 py-4 rounded-xl bg-zinc-100 text-black font-bold text-lg hover:bg-white hover:scale-105 transition-all shadow-xl shadow-white/5">
+            <Link href="/ventures" className="inline-block px-8 py-4 rounded-xl bg-zinc-100 text-black font-bold text-lg hover:bg-white hover:scale-105 transition-all shadow-xl shadow-white/5">
                 Return to Ventures
             </Link>
         </div>
