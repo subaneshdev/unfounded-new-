@@ -71,9 +71,12 @@ export const metadata: Metadata = {
     images: ["/unfounded-team.jpg"],
   },
   icons: {
-    icon: "/icon.jpg",
-    shortcut: "/icon.jpg",
-    apple: "/icon.jpg",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/icon.png",
   },
   other: {
     "geo.region": "IN-TN",
