@@ -72,11 +72,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon.png", type: "image/png" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
     shortcut: "/favicon.ico",
-    apple: "/icon.png",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   other: {
     "geo.region": "IN-TN",
@@ -95,7 +97,7 @@ const jsonLd = [
     "name": "Unfounded",
     "legalName": "Unfounded Venture Lab",
     "url": "https://unfounded.in",
-    "logo": "https://unfounded.in/favicon.ico",
+    "logo": "https://unfounded.in/icon.png",
     "image": "https://unfounded.in/unfounded-team.jpg",
     "foundingDate": "2024",
     "founder": {
